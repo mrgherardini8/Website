@@ -1,6 +1,6 @@
 @font-face {
 	font-family: inter;
-	src: url(/resources/data/inter.ttf);
+	src: url(../data/inter.ttf);
 }
 * {
 	font-family: inter;
@@ -16,7 +16,6 @@
 	cursor: default;
 	overflow: hidden;
 }
-
 .constructionDiv > span {
 	font-size: xx-large;
 	transition: all 10s cubic-bezier(1, 1, 0.75, 1.3);
