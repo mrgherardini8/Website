@@ -1,20 +1,40 @@
+:root {
+	font-family: inter;
+}
 @font-face {
 	font-family: inter;
 	src: url(../data/inter.ttf);
 }
-* {
-	font-family: inter;
-	padding: 0;
-	margin: 0;
+
+body {
+	background-color: black;
 }
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: #dadada;
+	border-radius: 15px;
+	border: 2px solid rgb(31, 31, 31);
+	cursor: none;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #bbbbbb;
+}
+::-webkit-scrollbar-track {
+	background: rgb(31, 31, 31);
+}
+
 .constructionDiv {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 	cursor: default;
 	overflow: hidden;
+	color: white;
 }
 .constructionDiv > span {
 	font-size: xx-large;
@@ -22,4 +42,34 @@
 }
 .constructionDiv > span:hover {
 	font-size: 5000px;
+}
+
+header {
+	margin-top: 5rem;
+}
+nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 5rem;
+	background-color: #080808;
+	-webkit-box-shadow: 0px 5px 19px 0px #0c0c0c;
+	box-shadow: 0px 5px 19px 0px #0c0c0c;
+}
+nav a {
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	color: white;
+	transition: all 0.5s ease-out;
+}
+nav a:hover {
+	text-decoration-color: white;
+}
+nav img {
+	height: 4rem;
+	border-radius: 20%;
+	background-color: white;
 }
