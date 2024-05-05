@@ -8,6 +8,7 @@
 
 body {
 	background-color: black;
+	color: white;
 }
 
 ::-webkit-scrollbar {
@@ -50,6 +51,7 @@ header {
 }
 nav {
 	position: fixed;
+	z-index: 0;
 	top: 0;
 	width: 100%;
 	display: flex;
@@ -74,7 +76,6 @@ nav img {
 	border-radius: 20%;
 	background-color: white;
 }
-
 .header {
 	display: flex;
 	cursor: default;
@@ -95,9 +96,7 @@ nav img {
 	position: absolute;
 	transform: translate(-91%, -54.7%);
 	font-size: 1.1em;
-}
-h1 {
-	position: relative;
+	transition: all 0.5s;
 }
 .coverDot {
 	position: absolute;
@@ -108,4 +107,53 @@ h1 {
 .playDot:hover {
 	scale: 2;
 	transform: translate(calc(-91% / 2), calc(-54.7%));
+}
+
+.contactHeader {
+	height: fit-content;
+}
+.socials {
+	display: flex;
+	position: relative;
+	/* z-index: -1; */
+	align-items: center;
+	justify-content: space-around;
+	padding-top: 40px;
+	padding-bottom: 10px;
+	height: 5em;
+	transform: scale(1);
+	transition: 0.15s all ease;
+	background-color: darkcyan;
+}
+.socials:hover {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.socials p {
+	margin: 0;
+	opacity: 0;
+	transition: 0.3s all ease;
+}
+.socials:hover p {
+	opacity: 1;
+}
+.socials a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+	color: white;
+}
+.socials img {
+	height: 3em;
+	margin-bottom: 1em;
+	border-radius: 15%;
+}
+.socials div {
+	transition: all 0.3s ease-out;
+	text-decoration: underline;
+	text-decoration-color: transparent;
+}
+.socials div:hover {
+	text-decoration-color: white;
 }
