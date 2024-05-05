@@ -51,8 +51,8 @@ header {
 }
 nav {
 	position: fixed;
-	z-index: 0;
 	top: 0;
+	z-index: 1;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -109,13 +109,9 @@ nav img {
 	transform: translate(calc(-91% / 2), calc(-54.7%));
 }
 
-.contactHeader {
-	height: fit-content;
-}
 .socials {
 	display: flex;
-	position: relative;
-	/* z-index: -1; */
+	margin-top: 5rem;
 	align-items: center;
 	justify-content: space-around;
 	padding-top: 40px;
@@ -156,4 +152,83 @@ nav img {
 }
 .socials div:hover {
 	text-decoration-color: white;
+}
+
+.contactForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 20px;
+}
+.contactForm h1 {
+	font-size: 3em;
+}
+.contactFormContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto auto;
+	row-gap: 20px;
+	column-gap: 30px;
+	padding: 10px;
+	padding-top: 50px;
+}
+.contactFormContainer input[type="text"],
+.contactFormContainer input[type="tel"],
+.contactFormContainer input[type="email"],
+.contactFormContainer textarea,
+.contactFormContainer select {
+	padding: 0.5em 2em 0.5em 1em;
+	color: white;
+	background-color: rgb(95, 95, 95);
+	border: 2px solid transparent;
+	transition: all 0.2s;
+}
+.contactFormContainer select {
+	cursor: pointer;
+}
+.contactFormContainer textarea {
+	resize: none;
+	overflow-y: scroll;
+	height: 20px;
+}
+::placeholder {
+	color: lightgray;
+}
+.contactFormContainer input[type="text"]:focus,
+.contactFormContainer input[type="tel"]:focus,
+.contactFormContainer input[type="email"]:focus,
+.contactFormContainer textarea:focus,
+.contactFormContainer select:focus {
+	outline: none;
+	border-color: white;
+}
+#type {
+	grid-column: span 2;
+	justify-self: center;
+	width: 50%;
+}
+#message {
+	grid-column: span 2;
+	height: 100px;
+	overflow: hidden;
+}
+#submit {
+	grid-column: span 2;
+	padding: 1em 2em 1em 2em;
+	justify-self: center;
+	cursor: pointer;
+	border: none;
+	background-color: rgb(95, 95, 95);
+	color: white;
+	font-weight: bold;
+	transition: all 0.2s;
+	border-radius: 30px;
+}
+#submit:hover {
+	background-color: rgb(78, 78, 78);
+}
+.warning {
+	font-style: italic;
+	color: red;
 }

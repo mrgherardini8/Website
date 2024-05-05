@@ -10,51 +10,64 @@
 		<script src="./resources/js/script.js"></script>
 	</head>
 	<body>
-		<header class="contactHeader">
-			<nav>
-				<a href="/Website"><img src="./resources/media/TEMPFAV.png" alt="Logo" /></a>
-				<a href="#">About Me</a>
-				<a href="#">Resume</a>
-				<a href="#">Projects</a>
-				<a href="#">Contact</a>
-			</nav>
-			<!-- FIX OVERLAP -->
-			<section class="socials">
-				<div>
-					<a href="https://github.com/mrgherardini8" target="_blank">
-						<img src="./resources/media/github.webp" alt="Github" />
-						<p>Github</p>
-					</a>
-				</div>
-				<div>
-					<a href="https://www.linkedin.com/in/matthew-gherardini/" target="_blank">
-						<img src="./resources/media/linkedin.webp" alt="Linkedin" />
-						<p>Linkedin</p>
-					</a>
-				</div>
-				<div>
-					<a href="https://instagram.com/matthew_gherardini" target="_blank">
-						<img src="./resources/media/instagram.webp" alt="Instagram" />
-						<p>Instagram</p>
-					</a>
-				</div>
-				<div>
-					<a href="#" target="_blank">
-						<img src="./resources/media/twitter.svg" alt="X" style="border-radius: 0" />
-						<p>X</p>
-					</a>
-				</div>
-				<!-- <div class="social">
+		<nav>
+			<a href="/Website"><img src="./resources/media/TEMPFAV.png" alt="Logo" /></a>
+			<a href="#">About Me</a>
+			<a href="#">Resume</a>
+			<a href="#">Projects</a>
+			<a href="#">Contact</a>
+		</nav>
+		<section class="socials">
+			<div>
+				<a href="https://github.com/mrgherardini8" target="_blank">
+					<img src="./resources/media/github.webp" alt="Github" />
+					<p>Github</p>
+				</a>
+			</div>
+			<div>
+				<a href="https://www.linkedin.com/in/matthew-gherardini/" target="_blank">
+					<img src="./resources/media/linkedin.webp" alt="Linkedin" />
+					<p>Linkedin</p>
+				</a>
+			</div>
+			<div>
+				<a href="https://instagram.com/matthew_gherardini" target="_blank">
+					<img src="./resources/media/instagram.webp" alt="Instagram" />
+					<p>Instagram</p>
+				</a>
+			</div>
+			<div>
+				<a href="#" target="_blank">
+					<img src="./resources/media/twitter.svg" alt="X" style="border-radius: 0" />
+					<p>X</p>
+				</a>
+			</div>
+			<!-- <div class="social">
 					<a href="#" target="_blank">
 						<img src="./resources/media/email.jpg" alt="Email" />
 						Email
 					</a>
 				</div> -->
-			</section>
-		</header>
-		<main style="height: 20000px">
+		</section>
+		<main class="contactForm">
 			<h1>Contact Form</h1>
-			<span>Required Fields *</span>
+			<span class="warning">Required Fields *</span>
+			<form action="/" method="post" class="contactFormContainer">
+				<input type="text" name="fName" id="fName" placeholder="First Name *" autocomplete="given-name" required />
+				<input type="text" name="lName" id="lName" placeholder="Last Name *" autocomplete="family-name" required />
+				<input type="email" name="email" id="email" placeholder="Email *" autocomplete="email" required />
+				<input type="tel" name="phone" id="phone" placeholder="Phone Number (Optional)" autocomplete="tel" />
+				<!-- MAKE THIS REQUIRED -->
+				<select id="type" name="type" required>
+					<!-- ADD MORE -->
+					<option value="" selected disabled hidden>Reason *</option>
+					<option value="question">Question</option>
+					<option value="feedback">Feedback</option>
+					<option value="other">Other</option>
+				</select>
+				<textarea name="message" id="message" wrap="hard" placeholder="Your Message..." autocomplete="off"></textarea>
+				<input type="submit" value="Submit" id="submit" />
+			</form>
 		</main>
 	</body>
 </html>
