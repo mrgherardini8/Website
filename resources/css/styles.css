@@ -160,6 +160,7 @@ nav img {
 	align-items: center;
 	flex-direction: column;
 	padding-top: 20px;
+	cursor: default;
 }
 .contactForm h1 {
 	font-size: 3em;
