@@ -53,18 +53,18 @@
 			<h1>Contact Form</h1>
 			<span class="warning">Required Fields *</span>
 			<form class="contactFormContainer">
-				<input type="text" name="fName" id="fName" placeholder="First Name *" autocomplete="given-name" />
-				<input type="text" name="lName" id="lName" placeholder="Last Name *" autocomplete="family-name" />
-				<input type="email" name="email" id="email" placeholder="Email *" autocomplete="email" />
+				<input type="text" name="fName" id="fName" placeholder="First Name *" autocomplete="given-name" required />
+				<input type="text" name="lName" id="lName" placeholder="Last Name *" autocomplete="family-name" required />
+				<input type="email" name="email" id="email" placeholder="Email *" autocomplete="email" required />
 				<input type="tel" name="phone" id="phone" placeholder="Phone Number (Optional)" autocomplete="tel" />
-				<select id="type" name="type">
+				<select id="type" name="type" required>
 					<!-- ADD MORE -->
 					<option value="" selected disabled hidden>Reason *</option>
 					<option value="Question">Question</option>
 					<option value="Feedback">Feedback</option>
 					<option value="Other">Other</option>
 				</select>
-				<textarea name="message" id="message" wrap="hard" placeholder="Your Message..." autocomplete="off"></textarea>
+				<textarea name="message" id="message" wrap="hard" placeholder="Your Message..." autocomplete="off" required></textarea>
 				<input type="button" value="Submit" id="submit" onclick="sendHTTP()" />
 			</form>
 			<script>
