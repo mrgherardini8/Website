@@ -6,11 +6,7 @@
 		<title>Matthew Gherardini</title>
 		<link rel="stylesheet" href="./resources/css/normalize.css" />
 		<link rel="stylesheet" href="./resources/css/styles.css" />
-		<link
-			rel="shortcut icon"
-			href="./resources/media/TEMPFAV.png"
-			type="image/x-icon"
-		/>
+		<link rel="shortcut icon" href="./resources/media/TEMPFAV.png" type="image/x-icon" />
 		<script src="./resources/js/script.js"></script>
 	</head>
 	<body>
@@ -29,10 +25,7 @@
 				</a>
 			</div>
 			<div>
-				<a
-					href="https://www.linkedin.com/in/matthew-gherardini/"
-					target="_blank"
-				>
+				<a href="https://www.linkedin.com/in/matthew-gherardini/" target="_blank">
 					<img src="./resources/media/linkedin.webp" alt="Linkedin" />
 					<p>Linkedin</p>
 				</a>
@@ -45,11 +38,7 @@
 			</div>
 			<div>
 				<a href="#" target="_blank">
-					<img
-						src="./resources/media/twitter.svg"
-						alt="X"
-						style="border-radius: 0"
-					/>
+					<img src="./resources/media/twitter.svg" alt="X" style="border-radius: 0" />
 					<p>X</p>
 				</a>
 			</div>
@@ -64,76 +53,74 @@
 			<h1>Contact Form</h1>
 			<span class="warning">Required Fields *</span>
 			<form class="contactFormContainer">
-				<input
-					type="text"
-					name="fName"
-					id="fName"
-					placeholder="First Name *"
-					autocomplete="given-name"
-					required
-				/>
-				<input
-					type="text"
-					name="lName"
-					id="lName"
-					placeholder="Last Name *"
-					autocomplete="family-name"
-					required
-				/>
-				<input
-					type="email"
-					name="email"
-					id="email"
-					placeholder="Email *"
-					autocomplete="email"
-					required
-				/>
-				<input
-					type="tel"
-					name="phone"
-					id="phone"
-					placeholder="Phone Number (Optional)"
-					autocomplete="tel"
-				/>
+				<input type="text" name="fName" id="fName" placeholder="First Name *" autocomplete="given-name" required />
+				<input type="text" name="lName" id="lName" placeholder="Last Name *" autocomplete="family-name" required />
+				<input type="email" name="email" id="email" placeholder="Email *" autocomplete="email" required />
+				<input type="tel" name="phone" id="phone" placeholder="Phone Number (Optional)" autocomplete="tel" />
 				<select id="type" name="type" required>
 					<!-- ADD MORE -->
 					<option value="" selected disabled hidden>Reason *</option>
 					<option value="Question">Question</option>
+					<option value="Question">Inquiry</option>
 					<option value="Feedback">Feedback</option>
 					<option value="Other">Other</option>
 				</select>
-				<textarea
-					name="message"
-					id="message"
-					wrap="hard"
-					placeholder="Your Message..."
-					autocomplete="off"
-					required
-				></textarea>
+				<textarea name="message" id="message" wrap="hard" placeholder="Your Message..." autocomplete="off" required></textarea>
 				<input type="button" value="Submit" id="submit" onclick="sendHTTP()" />
+				<p id="error" class="warning" style="display: inline"></p>
 			</form>
 			<script>
 				function sendHTTP() {
-					const xhr = new XMLHttpRequest();
-					xhr.open(
-						"POST",
-						//"https://5903bc35cbe42d3b5e7d65268b6f2c86.m.pipedream.net"
-						"https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTZhMDYzNTA0MzE1MjY0NTUzNjUxMzIi_pc"
-					);
-					xhr.setRequestHeader(
-						"Content-Type",
-						"application/x-www-form-urlencoded"
-					);
-					const body = JSON.stringify({
-						firstName: document.getElementById("fName").value,
-						lastName: document.getElementById("lName").value,
-						email: document.getElementById("email").value,
-						phone: document.getElementById("phone").value,
-						type: document.getElementById("type").value,
-						message: document.getElementById("message").value,
-					});
-					xhr.send(body);
-					document.getElementById("submit").disabled = true;
+					document.getElementById("error").innerHTML = "";
+					if (!formErrors()) {
+						const xhr = new XMLHttpRequest();
+						xhr.open(
+							"POST",
+							"https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTZhMDYzNTA0MzE1MjY0NTUzNjUxMzIi_pc"
+							//"https://5903bc35cbe42d3b5e7d65268b6f2c86.m.pipedream.net"
+						);
+						xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+						const body = JSON.stringify({
+							firstName: document.getElementById("fName").value,
+							lastName: document.getElementById("lName").value,
+							email: document.getElementById("email").value,
+							phone: document.getElementById("phone").value,
+							type: document.getElementById("type").value,
+							message: document.getElementById("message").value,
+						});
+						xhr.send(body);
+						document.getElementById("submit").disabled = true;
+						document.getElementById("submit").value = "Success!";
+						document.getElementById("submit").style = "color:lime;";
+					}
+				}
+				function formErrors() {
+					var error = false;
+					if (document.getElementById("fName").value == "") {
+						document.getElementById("error").innerHTML += "Please enter your first name";
+						error = true;
+					}
+					if (document.getElementById("lName").value == "") {
+						document.getElementById("error").innerHTML += "<br>Please enter your last name";
+						error = true;
+					}
+					if (document.getElementById("email").value == "" || !document.getElementById("email").value.includes("@")) {
+						document.getElementById("error").innerHTML += "<br>Please enter a valid email";
+						error = true;
+					}
+					if (document.getElementById("phone").value != "" && !(typeof document.getElementById("phone") === "number")) {
+						document.getElementById("error").innerHTML += "<br>Please enter a valid phone number";
+						error = true;
+					}
+					if (document.getElementById("type").value == "") {
+						document.getElementById("error").innerHTML += "<br>Please choose a reason for this form";
+						error = true;
+					}
+					if (document.getElementById("message").value == "") {
+						document.getElementById("error").innerHTML += "<br>Please create a message";
+						error = true;
+					}
+					return error;
 				}
 			</script>
 		</main>
