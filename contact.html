@@ -6,12 +6,16 @@
 		<title>Matthew Gherardini</title>
 		<link rel="stylesheet" href="./resources/css/normalize.css" />
 		<link rel="stylesheet" href="./resources/css/styles.css" />
-		<link rel="shortcut icon" href="./resources/media/TEMPFAV.png" type="image/x-icon" />
+		<link
+			rel="shortcut icon"
+			href="./resources/media/TEMPFAV.png"
+			type="image/x-icon"
+		/>
 		<script src="./resources/js/script.js"></script>
 	</head>
 	<body>
 		<nav>
-			<a href="/Website"><img src="./resources/media/TEMPFAV.png" alt="Logo" /></a>
+			<a href="/"><img src="./resources/media/TEMPFAV.png" alt="Logo" /></a>
 			<a href="./aboutme.html">About Me</a>
 			<a href="#">Resume</a>
 			<a href="#">Projects</a>
@@ -25,7 +29,10 @@
 				</a>
 			</div>
 			<div>
-				<a href="https://www.linkedin.com/in/matthew-gherardini/" target="_blank">
+				<a
+					href="https://www.linkedin.com/in/matthew-gherardini/"
+					target="_blank"
+				>
 					<img src="./resources/media/linkedin.webp" alt="Linkedin" />
 					<p>Linkedin</p>
 				</a>
@@ -38,7 +45,11 @@
 			</div>
 			<div>
 				<a href="#" target="_blank">
-					<img src="./resources/media/twitter.svg" alt="X" style="border-radius: 0" />
+					<img
+						src="./resources/media/twitter.svg"
+						alt="X"
+						style="border-radius: 0"
+					/>
 					<p>X</p>
 				</a>
 			</div>
@@ -53,10 +64,37 @@
 			<h1>Contact Form</h1>
 			<span class="warning">Required Fields *</span>
 			<form class="contactFormContainer">
-				<input type="text" name="fName" id="fName" placeholder="First Name *" autocomplete="given-name" required />
-				<input type="text" name="lName" id="lName" placeholder="Last Name *" autocomplete="family-name" required />
-				<input type="email" name="email" id="email" placeholder="Email *" autocomplete="email" required />
-				<input type="tel" name="phone" id="phone" placeholder="Phone Number (Optional)" autocomplete="tel" />
+				<input
+					type="text"
+					name="fName"
+					id="fName"
+					placeholder="First Name *"
+					autocomplete="given-name"
+					required
+				/>
+				<input
+					type="text"
+					name="lName"
+					id="lName"
+					placeholder="Last Name *"
+					autocomplete="family-name"
+					required
+				/>
+				<input
+					type="email"
+					name="email"
+					id="email"
+					placeholder="Email *"
+					autocomplete="email"
+					required
+				/>
+				<input
+					type="tel"
+					name="phone"
+					id="phone"
+					placeholder="Phone Number (Optional)"
+					autocomplete="tel"
+				/>
 				<select id="type" name="type" required>
 					<!-- ADD MORE -->
 					<option value="" selected disabled hidden>Reason *</option>
@@ -64,14 +102,27 @@
 					<option value="Feedback">Feedback</option>
 					<option value="Other">Other</option>
 				</select>
-				<textarea name="message" id="message" wrap="hard" placeholder="Your Message..." autocomplete="off" required></textarea>
+				<textarea
+					name="message"
+					id="message"
+					wrap="hard"
+					placeholder="Your Message..."
+					autocomplete="off"
+					required
+				></textarea>
 				<input type="button" value="Submit" id="submit" onclick="sendHTTP()" />
 			</form>
 			<script>
 				function sendHTTP() {
 					const xhr = new XMLHttpRequest();
-					xhr.open("POST", "https://5903bc35cbe42d3b5e7d65268b6f2c86.m.pipedream.net");
-					xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					xhr.open(
+						"POST",
+						"https://5903bc35cbe42d3b5e7d65268b6f2c86.m.pipedream.net"
+					);
+					xhr.setRequestHeader(
+						"Content-Type",
+						"application/x-www-form-urlencoded"
+					);
 					const body = JSON.stringify({
 						firstName: document.getElementById("fName").value,
 						lastName: document.getElementById("lName").value,
