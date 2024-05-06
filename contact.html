@@ -52,22 +52,37 @@
 		<main class="contactForm">
 			<h1>Contact Form</h1>
 			<span class="warning">Required Fields *</span>
-			<form action="/" method="post" class="contactFormContainer">
-				<input type="text" name="fName" id="fName" placeholder="First Name *" autocomplete="given-name" required />
-				<input type="text" name="lName" id="lName" placeholder="Last Name *" autocomplete="family-name" required />
-				<input type="email" name="email" id="email" placeholder="Email *" autocomplete="email" required />
+			<form class="contactFormContainer">
+				<input type="text" name="fName" id="fName" placeholder="First Name *" autocomplete="given-name" />
+				<input type="text" name="lName" id="lName" placeholder="Last Name *" autocomplete="family-name" />
+				<input type="email" name="email" id="email" placeholder="Email *" autocomplete="email" />
 				<input type="tel" name="phone" id="phone" placeholder="Phone Number (Optional)" autocomplete="tel" />
-				<!-- MAKE THIS REQUIRED -->
-				<select id="type" name="type" required>
+				<select id="type" name="type">
 					<!-- ADD MORE -->
 					<option value="" selected disabled hidden>Reason *</option>
-					<option value="question">Question</option>
-					<option value="feedback">Feedback</option>
-					<option value="other">Other</option>
+					<option value="Question">Question</option>
+					<option value="Feedback">Feedback</option>
+					<option value="Other">Other</option>
 				</select>
 				<textarea name="message" id="message" wrap="hard" placeholder="Your Message..." autocomplete="off"></textarea>
-				<input type="submit" value="Submit" id="submit" />
+				<input type="button" value="Submit" id="submit" onclick="sendHTTP()" />
 			</form>
+			<script>
+				function sendHTTP() {
+					const xhr = new XMLHttpRequest();
+					xhr.open("POST", "https://5903bc35cbe42d3b5e7d65268b6f2c86.m.pipedream.net");
+					xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					const body = JSON.stringify({
+						firstName: document.getElementById("fName").value,
+						lastName: document.getElementById("lName").value,
+						email: document.getElementById("email").value,
+						phone: document.getElementById("phone").value,
+						type: document.getElementById("type").value,
+						message: document.getElementById("message").value,
+					});
+					xhr.send(body);
+				}
+			</script>
 		</main>
 	</body>
 </html>
