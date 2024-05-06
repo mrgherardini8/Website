@@ -229,6 +229,11 @@ nav img {
 #submit:hover {
 	background-color: rgb(78, 78, 78);
 }
+#submit:disabled {
+	color: rgb(218, 218, 218);
+	background-color: rgb(109, 109, 109);
+	cursor: not-allowed;
+}
 .warning {
 	font-style: italic;
 	color: red;
