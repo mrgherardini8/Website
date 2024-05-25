@@ -1,0 +1,17 @@
+.constructionDiv {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+	cursor: default;
+	overflow: hidden;
+	color: white;
+}
+.constructionDiv > span {
+	font-size: xx-large;
+	transition: all 0.2s cubic-bezier(1, 1, 0.75, 1.3);
+}
+.constructionDiv > span:hover {
+	font-size: 100px;
+}

@@ -4,57 +4,52 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Matthew Gherardini</title>
-		<link rel="stylesheet" href="./resources/css/normalize.css" />
-		<link rel="stylesheet" href="./resources/css/styles.css" />
-		<link rel="shortcut icon" href="./resources/media/temptestfav2.png" type="image/x-icon" />
-		<script src="./resources/js/script.js"></script>
+		<link rel="stylesheet" href="/resources/css/normalize.css" />
+		<link rel="stylesheet" href="/resources/css/globalStyles.css" />
+		<link rel="stylesheet" href="/resources/css/contact.css" />
+		<link rel="shortcut icon" href="/resources/media/temptestfav2.png" type="image/x-icon" />
+		<script src="/resources/js/script.js"></script>
 	</head>
 	<body>
-		<nav>
-			<a href="/"><img src="./resources/media/temptestfav2.png" alt="Logo" /></a>
-			<a href="./aboutme.html">About Me</a>
-			<a href="#">Resume</a>
-			<a href="#">Projects</a>
-			<a href="#">Contact</a>
-		</nav>
-		<section class="socials">
-			<div>
-				<a href="https://github.com/mrgherardini8" target="_blank">
-					<img src="./resources/media/github.webp" alt="Github" />
-					<p>Github</p>
-				</a>
-			</div>
-			<div>
-				<a href="https://www.linkedin.com/in/matthew-gherardini/" target="_blank">
-					<img src="./resources/media/linkedin.webp" alt="Linkedin" />
-					<p>Linkedin</p>
-				</a>
-			</div>
-			<div>
-				<a href="mailto:contact@mattgher.com?subject=Website%20Contact&body=Write%20your%20message%20here..." target="_blank">
-					<img src="resources/media/email.png" style="background-color: white" alt="Email" />
-					<p>Email</p>
-				</a>
-			</div>
-			<div>
-				<a href="https://instagram.com/matthew_gherardini" target="_blank">
-					<img src="./resources/media/instagram.webp" alt="Instagram" />
-					<p>Instagram</p>
-				</a>
-			</div>
-			<div>
-				<a href="#" target="_blank">
-					<img src="./resources/media/twitter.svg" alt="X" style="border-radius: 0" />
-					<p>X</p>
-				</a>
-			</div>
-			<!-- <div class="social">
-					<a href="#" target="_blank">
-						<img src="./resources/media/email.jpg" alt="Email" />
-						Email
+		<header>
+			<nav id="navbar">
+				<script>
+					navbarUpdate(document.getElementById("navbar"), "contact");
+				</script>
+			</nav>
+			<section class="socials">
+				<div>
+					<a href="https://github.com/mrgherardini8" target="_blank">
+						<img src="./resources/media/github.webp" alt="Github" />
+						<p>Github</p>
 					</a>
-				</div> -->
-		</section>
+				</div>
+				<div>
+					<a href="https://www.linkedin.com/in/matthew-gherardini/" target="_blank">
+						<img src="./resources/media/linkedin.webp" alt="Linkedin" />
+						<p>Linkedin</p>
+					</a>
+				</div>
+				<div>
+					<a href="mailto:contact@mattgher.com?subject=Website%20Contact&body=Write%20your%20message%20here..." target="_blank">
+						<img src="resources/media/email.png" style="background-color: white" alt="Email" />
+						<p>Email</p>
+					</a>
+				</div>
+				<div>
+					<a href="https://instagram.com/matthew_gherardini" target="_blank">
+						<img src="./resources/media/instagram.webp" alt="Instagram" />
+						<p>Instagram</p>
+					</a>
+				</div>
+				<div>
+					<a href="#" target="_blank">
+						<img src="./resources/media/twitter.svg" alt="X" style="border-radius: 0" />
+						<p>X</p>
+					</a>
+				</div>
+			</section>
+		</header>
 		<main class="contactForm">
 			<h1>Contact Form</h1>
 			<span class="warning">Required Fields *</span>

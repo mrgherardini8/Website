@@ -1,0 +1,39 @@
+header {
+	height: calc(100vh - var(--navHeight));
+}
+
+.headerContent {
+	display: flex;
+	cursor: default;
+	height: 100%;
+	color: var(--primaryColor);
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 40px;
+	margin-right: 40px;
+	font-size: 3em;
+}
+.headerContent h1 {
+	font-size: 2em;
+}
+.divider {
+	height: 100%;
+	width: 0.5vw;
+	background-color: var(--secondaryColor);
+}
+.playDot {
+	position: absolute;
+	transform: translate(-91%, -54.7%);
+	font-size: 1.1em;
+	transition: all 0.5s;
+}
+.coverDot {
+	position: absolute;
+	transform: translate(-91%, -54.7%);
+	font-size: 1.1em;
+	color: black;
+}
+.playDot:hover {
+	scale: 2;
+	transform: translate(calc(-91% / 2), calc(-54.7%));
+}

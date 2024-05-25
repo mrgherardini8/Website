@@ -1,0 +1,64 @@
+header > h1 {
+	text-align: center;
+	padding-top: 2rem;
+}
+.container {
+	display: flex;
+	padding: 30px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+a {
+	text-decoration: none;
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	text-align: center;
+	color: white;
+	flex-wrap: wrap;
+	width: 320px;
+	height: 320px;
+	margin: 20px;
+	border-radius: 15px;
+	background-color: rgb(73, 73, 73);
+	transform: none;
+	-webkit-transform: translateZ(0);
+	transition: all 0.5s;
+	/* box-shadow: 0 4px 8px 0 rgba(83, 83, 83, 0.2); */
+}
+.description {
+	transition: font-size 0.15s linear 0.1s, opacity 0.2s linear 0.5s;
+	transform: none;
+	-webkit-transform: translateZ(0);
+	opacity: 0;
+	font-size: 0;
+	max-height: 175px;
+	overflow-y: scroll;
+}
+.project:hover {
+	height: 500px;
+	border-radius: 15px 15px 0 0;
+}
+.project:hover .description {
+	font-size: initial;
+	opacity: 1;
+	background-color: rgb(63, 63, 63);
+}
+
+#returnButton {
+	position: absolute;
+	margin: 20px;
+	color: white;
+	cursor: pointer;
+	padding: 20px;
+	background-color: gray;
+	border-radius: 15px;
+}
+
+.templateHeader {
+	margin: 0;
+}
