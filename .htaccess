@@ -1,5 +1,7 @@
 RewriteEngine On
 
+DirectoryIndex index.html
+
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
@@ -13,4 +15,3 @@ ErrorDocument 401 /unauthorized.html
 ErrorDocument 403 /forbidden.html
 ErrorDocument 404 /404.html
 ErrorDocument 500 /index.html#server-error
-
