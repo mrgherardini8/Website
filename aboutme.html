@@ -17,21 +17,39 @@
 			</script>
 		</nav>
 		<div class="constructionDiv">
-			<span>C</span>
-			<span>o</span>
-			<span>m</span>
-			<span>i</span>
-			<span>n</span>
-			<span>g</span>
+			<span class="spans">C</span>
+			<span class="spans">o</span>
+			<span class="spans">m</span>
+			<span class="spans">i</span>
+			<span class="spans">n</span>
+			<span class="spans">g</span>
 			<p>&nbsp;&nbsp;&nbsp;</p>
-			<span>S</span>
-			<span>o</span>
-			<span>o</span>
-			<span>n</span>
+			<span class="spans">S</span>
+			<span class="spans">o</span>
+			<span class="spans">o</span>
+			<span class="spans">n</span>
 			<p>&nbsp;</p>
-			<span>.</span>
-			<span>.</span>
-			<span>.</span>
+			<span class="spans">.</span>
+			<span class="spans">.</span>
+			<span class="spans">.</span>
 		</div>
+		<script>
+			var spans = document.getElementsByClassName("spans");
+			const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+			var num = 0;
+			async function test() {
+				while (true) {
+					if (num > spans.length - 1) {
+						num = 0;
+						await sleep(1000);
+					}
+					spans[num].classList.add("new_size");
+					await sleep(500);
+					spans[num].classList.remove("new_size");
+					num++;
+				}
+			}
+			test();
+		</script>
 	</body>
 </html>

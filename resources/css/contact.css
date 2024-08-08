@@ -64,7 +64,7 @@
 .contactFormContainer select {
 	padding: 0.5em 2em 0.5em 1em;
 	color: white;
-	background-color: rgb(95, 95, 95);
+	background-color: var(--secondaryColor2);
 	border: 2px solid transparent;
 	transition: all 0.2s;
 }
@@ -86,6 +86,14 @@
 .contactFormContainer select:focus {
 	outline: none;
 	border-color: white;
+}
+
+.contactFormContainer input[type="text"]:hover,
+.contactFormContainer input[type="tel"]:hover,
+.contactFormContainer input[type="email"]:hover,
+.contactFormContainer textarea:hover,
+.contactFormContainer select:hover {
+	background-color: var(--secondaryColorHover2);
 }
 #type {
 	grid-column: span 2;

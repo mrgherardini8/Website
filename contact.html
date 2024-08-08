@@ -43,7 +43,7 @@
 					</a>
 				</div>
 				<div>
-					<a href="#" target="_blank">
+					<a href="https://x.com/matt_gherardini" target="_blank">
 						<img src="./resources/media/twitter.svg" alt="X" style="border-radius: 0" />
 						<p>X</p>
 					</a>
@@ -52,7 +52,7 @@
 		</header>
 		<main class="contactForm">
 			<h1>Contact Form</h1>
-			<span class="warning">Required Fields *</span>
+			<span class="warning">* Required Fields</span>
 			<form class="contactFormContainer">
 				<input type="text" name="fName" id="fName" placeholder="First Name *" autocomplete="given-name" required />
 				<input type="text" name="lName" id="lName" placeholder="Last Name *" autocomplete="family-name" required />
@@ -98,27 +98,27 @@
 				function formErrors() {
 					var error = false;
 					if (document.getElementById("fName").value == "") {
-						document.getElementById("error").innerHTML += "*Please enter your first name";
+						document.getElementById("error").innerHTML += "* Please enter your first name<br>";
 						error = true;
 					}
 					if (document.getElementById("lName").value == "") {
-						document.getElementById("error").innerHTML += "<br>*Please enter your last name";
+						document.getElementById("error").innerHTML += "* Please enter your last name<br>";
 						error = true;
 					}
 					if (document.getElementById("email").value == "" || !document.getElementById("email").value.includes("@")) {
-						document.getElementById("error").innerHTML += "<br>*Please enter a valid email<br>(EX: email@email.com)";
+						document.getElementById("error").innerHTML += "* Please enter a valid email<br>^ (EX: email@email.com)<br>";
 						error = true;
 					}
 					if (document.getElementById("phone").value != "" && isNaN(document.getElementById("phone").value)) {
-						document.getElementById("error").innerHTML += "<br>*Please enter a valid phone number<br>(EX: 1234567890)";
+						document.getElementById("error").innerHTML += "* Phone number is invalid<br>^ (EX: 1234567890)<br>";
 						error = true;
 					}
 					if (document.getElementById("type").value == "") {
-						document.getElementById("error").innerHTML += "<br>*Please choose a reason for this form";
+						document.getElementById("error").innerHTML += "* Please choose a reason for this form<br>";
 						error = true;
 					}
 					if (document.getElementById("message").value == "") {
-						document.getElementById("error").innerHTML += "<br>*Please create a message";
+						document.getElementById("error").innerHTML += "* Please create a message";
 						error = true;
 					}
 					return error;

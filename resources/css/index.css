@@ -14,7 +14,7 @@ header {
 	font-size: 3em;
 }
 .headerContent h1 {
-	font-size: 2em;
+	font-size: 3em;
 }
 .divider {
 	height: 100%;
@@ -23,17 +23,56 @@ header {
 }
 .playDot {
 	position: absolute;
-	transform: translate(-91%, -54.7%);
+	transform: translate(-91.5%, -55.2%);
 	font-size: 1.1em;
 	transition: all 0.5s;
-}
-.coverDot {
-	position: absolute;
-	transform: translate(-91%, -54.7%);
-	font-size: 1.1em;
-	color: black;
+	z-index: 1;
 }
 .playDot:hover {
-	scale: 2;
-	transform: translate(calc(-91% / 2), calc(-54.7%));
+	color: blue;
+	cursor: help;
+}
+
+#firstName {
+	@supports (background-clip: text) or (-webkit-background-clip: text) {
+		background-image: url(../media/nameBG.svg);
+		/* background-size: 100% auto; */
+		background-position: center;
+		color: transparent;
+		-webkit-background-clip: text;
+		background-clip: text;
+	}
+}
+
+#lastName {
+	@supports (background-clip: text) or (-webkit-background-clip: text) {
+		background-image: url(../media/nameBG.svg);
+		/* background-size: 100% auto; */
+		background-position: center;
+		color: transparent;
+		-webkit-background-clip: text;
+		background-clip: text;
+	}
+}
+
+#picofme {
+	height: 700px;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 1620px) {
+	.headerContent h1 {
+		font-size: 2.5em;
+	}
+	#picofme {
+		height: 500px;
+	}
+}
+@media screen and (max-width: 1260px) {
+	.headerContent h1 {
+		font-size: 2em;
+	}
+	#picofme {
+		height: 300px;
+	}
 }

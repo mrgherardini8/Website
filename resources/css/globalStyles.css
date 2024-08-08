@@ -1,10 +1,12 @@
 :root {
 	font-family: inter;
-	--backgroundColor: black;
+	--backgroundColor: #1b1b1d;
 	--primaryColor: white;
-	--secondaryColor: #252525;
+	--secondaryColor: #2b2b30;
+	--secondaryColor2: rgb(69, 69, 77);
+	--secondaryColorHover2: rgb(50, 50, 56);
 	--tertiaryColor: darkcyan;
-	--navHeight: 5rem;
+	--navHeight: 4rem;
 }
 @font-face {
 	font-family: inter;
@@ -51,8 +53,8 @@ nav {
 	height: var(--navHeight);
 	border-radius: 0px 0px 15px 15px;
 	background-color: var(--secondaryColor);
-	-webkit-box-shadow: 0px 5px 19px 0px #2e2e2e;
-	box-shadow: 0px 2px 10px 0px #2e2e2e;
+	-webkit-box-shadow: 0px 5px 19px 0px #2b2b30;
+	box-shadow: 0px 2px 10px 0px #2b2b30;
 }
 nav a {
 	text-decoration: underline;
@@ -64,7 +66,7 @@ nav a:hover {
 	text-decoration-color: var(--primaryColor);
 }
 nav img {
-	height: 4rem;
+	height: 3rem;
 	border-radius: 20%;
 	background-color: white;
 }
